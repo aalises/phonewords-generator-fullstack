@@ -18,11 +18,11 @@ const SubmitButton = styled(Button)`
     margin-top: 0.5rem
 `
 
-export default ({handleSubmit}) => { 
+export default ({onSubmit}) => { 
     return (
-        <Formik validateOnChange={false} onSubmit={ props => handleSubmit(props)}  initialValues={PhoneWordModel.initialValues} validationSchema={PhoneWordModel.ValidationSchema} >
+        <Formik validateOnChange={false} onSubmit={ props => onSubmit(props)}  initialValues={PhoneWordModel.initialValues} validationSchema={PhoneWordModel.ValidationSchema} >
             {props => {
-            const { isSubmitting, handleSubmit, touched, values, errors, handleChange, handleBlur } = props;
+            const { handleSubmit, touched, values, errors, handleChange, handleBlur } = props;
                 return (
                     <FormBox>
                         <Form> 

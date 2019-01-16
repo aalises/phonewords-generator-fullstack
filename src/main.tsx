@@ -26,7 +26,7 @@ export default class Main extends PureComponent<MainState,any>{
     return (
       <MainView>
         <Heading spaceAfter="largest" type="display" element="h1">Phonewords Generator</Heading>
-        <PhonewordForm handleSubmit={this.handleSubmit} />
+        <PhonewordForm onSubmit={this.handleSubmit} />
       </MainView>
     )
   }
