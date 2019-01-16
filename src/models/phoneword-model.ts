@@ -13,6 +13,11 @@ export default class PhoneWordModel {
     static initialValues : PhoneWordRequest = {
         number: ''
     }
+
+    static messages = {
+        success: 'This is a valid phone number'
+        info: 'The phone number has to contain only digits e.g 690394837'
+    }
     
     static ValidationSchema = Yup.object().shape({
         number: Yup.string()
