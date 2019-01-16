@@ -8,11 +8,21 @@ const MainView = styled.div`
   padding: 3rem 3rem
   min-height: 100%
   display: flex
+
+  @media (max-width: 768px) {
+    flex-direction: column
+  }
+
 `
 
 const Column = styled.div`
   flex-direction: column
   width: ${props => props.half ? '50%' : 'auto'}
+
+  @media (max-width: 768px) {
+    padding-bottom: 3rem
+  }
+
 `
 
 interface MainState {
