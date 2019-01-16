@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 
 interface PhoneWordRequest {
-    number: number;
+    number: string;
 }
 
 export interface PhoneWordResponse {
@@ -15,9 +15,8 @@ export default class PhoneWordModel {
     }
     
     static ValidationSchema = Yup.object().shape({
-        number: Yup.number()
+        number: Yup.string()
           .required('Phone number cannot be empty')
-          .integer('Only integer numbers are allowed')
-          .positive('Only positive numbers are allowed')
+          .matches(/^[0-9]+$/,{ message: 'Only integer numbers are allowed (0-9)', excludeEmptyString: true })
     });
 }
