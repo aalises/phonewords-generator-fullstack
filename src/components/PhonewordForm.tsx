@@ -12,6 +12,10 @@ const FormBox = styled.div`
     border: 1px solid #D3D3D3
     border-radius: 5px
     padding: 1.5rem
+
+    @media (max-width: 768px) {
+        width: 100%
+    }
 `
 
 const SubmitButton = styled(Button)`

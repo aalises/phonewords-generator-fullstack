@@ -21,6 +21,7 @@ const Column = styled.div`
 
   @media (max-width: 768px) {
     padding-bottom: 3rem
+    width: 90%
   }
 
 `
