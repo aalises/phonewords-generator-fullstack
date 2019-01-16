@@ -12,7 +12,7 @@ const MainView = styled.div`
 export default () => {
   return (
     <MainView>
-      <Heading spaceAfter="large" type="display" element="h1">Phonewords Generator</Heading>
+      <Heading spaceAfter="largest" type="display" element="h1">Phonewords Generator</Heading>
       <PhonewordForm />
     </MainView>
   )
