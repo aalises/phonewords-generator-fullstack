@@ -18,24 +18,22 @@ const SubmitButton = styled(Button)`
     margin-top: 0.5rem
 `
 
-export default () => { 
+export default ({handleSubmit}) => { 
     return (
-        <Formik validateOnChange={false} onSubmit={(values, obj) => obj.setSubmitting(false)} initialValues={PhoneWordModel.initialValues} validationSchema={PhoneWordModel.ValidationSchema} >
+        <Formik validateOnChange={false} onSubmit={ props => handleSubmit(props)}  initialValues={PhoneWordModel.initialValues} validationSchema={PhoneWordModel.ValidationSchema} >
             {props => {
-            const { isSubmitting, touched, values, errors, handleChange, handleBlur } = props;
+            const { isSubmitting, handleSubmit, touched, values, errors, handleChange, handleBlur } = props;
                 return (
                     <FormBox>
-                        <Form>
-                            <div className="field">
-                                <InputField label="Phone Number" name="number" value={values.number} onBlur={handleBlur} onChange={handleChange} placeholder="Phone Number" type="text" />
-                            </div>
+                        <Form> 
+                            <InputField label="Phone Number" name="number" value={values.number} onBlur={handleBlur} onChange={handleChange} placeholder="Phone Number" type="text" />
                             {errors.number ?
                                 <Alert type="warning" title={null} icon><ErrorMessage name="number"/></Alert> : 
                                 touched.number ? 
                                     <Alert type="success" title={null} icon>{PhoneWordModel.messages.success}</Alert> :
                                     <Alert title={null} icon>{PhoneWordModel.messages.info}</Alert>
                             }
-                            <SubmitButton type="submit" disabled={isSubmitting}> Compute Phone Words </SubmitButton>
+                            <SubmitButton onClick={handleSubmit} type="submit"> Compute Phone Words </SubmitButton>
                         </Form>
                     </FormBox>
                 );
