@@ -27,17 +27,29 @@ const Column = styled.div`
 `
 
 interface MainState {
-  number: string
+  number: string,
+  data: PhoneWordResponse,
+  isSubmitting: boolean
 }
 
-export default class Main extends PureComponent<MainState,any>{
+export default class Main extends PureComponent<any, MainState>{
 
   state = {
-    number: ''
+    number: '',
+    data: {
+      success: false,
+      words: [],
+      error: ''
+    },
+    isSubmitting: false
   }
 
   handleSubmit(values){
-    this.setState({number: values.number});
+    console.log(values.number, this.state.number)
+    if(values.number === this.state.number) return; //Do not submit the same number again
+    this.setState({number: values.number, isSubmitting: true});
+    //Simulate API call (For now...)
+    setTimeout(() => this.setState({data: {...this.state.data, success: true, words: ['hey']}, isSubmitting: false}), 1000)
   }
 
   render(){
@@ -45,10 +57,10 @@ export default class Main extends PureComponent<MainState,any>{
       <MainView>
         <Column half>
           <Heading spaceAfter="largest" type="display" element="h1">Phonewords Generator</Heading>
-          <PhonewordForm onSubmit={(values) => this.handleSubmit(values)} />
+          <PhonewordForm isSubmitting={this.state.isSubmitting} onSubmit={(values) => this.handleSubmit(values)} />
         </Column>
         <Column half>
-          <PhonewordList number={this.state.number} />
+          <PhonewordList {...this.state} />
         </Column>
       </MainView>
     )

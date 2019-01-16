@@ -10,7 +10,7 @@ import Alert from "@kiwicom/orbit-components/lib/Alert";
 const FormBox = styled.div`
     width: 35vw
     border: 1px solid #D3D3D3
-    border-radius: 5px
+    border-radius: 3px
     padding: 1.5rem
 
     @media (max-width: 768px) {
@@ -22,7 +22,7 @@ const SubmitButton = styled(Button)`
     margin-top: 0.5rem
 `
 
-export default ({onSubmit}) => { 
+export default ({onSubmit, isSubmitting}) => { 
     return (
         <Formik validateOnChange={false} onSubmit={ props => onSubmit(props)}  initialValues={PhoneWordModel.initialValues} validationSchema={PhoneWordModel.ValidationSchema} >
             {props => {
@@ -37,7 +37,7 @@ export default ({onSubmit}) => {
                                     <Alert type="success" title={null} icon>{PhoneWordModel.messages.success}</Alert> :
                                     <Alert title={null} icon>{PhoneWordModel.messages.info}</Alert>
                             }
-                            <SubmitButton onClick={handleSubmit} type="submit"> Compute Phone Words </SubmitButton>
+                            <SubmitButton disabled={isSubmitting} type="secondary" onClick={handleSubmit} > Compute Phone Words </SubmitButton>
                         </Form>
                     </FormBox>
                 );

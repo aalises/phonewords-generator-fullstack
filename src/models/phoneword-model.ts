@@ -1,13 +1,5 @@
 import * as Yup from 'yup';
 
-interface PhoneWordRequest {
-    number: string;
-}
-
-export interface PhoneWordResponse {
-    success: boolean
-    words: string[]
-}
 
 export default class PhoneWordModel {    
     static initialValues : PhoneWordRequest = {
@@ -15,7 +7,7 @@ export default class PhoneWordModel {
     }
 
     static messages = {
-        success: 'This is a valid phone number'
+        success: 'This is a valid phone number',
         info: 'The phone number has to contain only digits e.g 690394837'
     }
     
