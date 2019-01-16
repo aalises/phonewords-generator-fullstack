@@ -25,6 +25,7 @@ npm run build
 The Frontend uses:
 
 - React 16.x
+- Typescript
 - Parcel Bundler
 - Kiwi.com Orbit Components
 - Cypress
