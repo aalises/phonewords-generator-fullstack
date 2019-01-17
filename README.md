@@ -4,6 +4,7 @@ Generator of Phonewords, Full Stack with containerized services for backend (Pyt
 
 ![screenshot](./frontend/public/assets/screenshots/PhoneWords.png)
 
+![screenshot2](./frontend/public/assets/screenshots/PhoneWords2.png)
 ## Description
 
 This application is a converter from phone numbers to [phonewords](https://en.wikipedia.org/wiki/Phoneword). You can input a phone and it will give you a list of all the possible phonewords for that specific phone number.
