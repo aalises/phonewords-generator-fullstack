@@ -92,5 +92,8 @@ and run the API by running
 python app.py
 ```
 
-`TODO:`
-- Testing with PyTest
+To test, run
+
+```
+python -m pytest
+```
