@@ -30,7 +30,7 @@ export default ({onSubmit, isSubmitting}) => {
                 return (
                     <FormBox>
                         <Form> 
-                            <InputField label="Phone Number" name="number" value={values.number} onBlur={handleBlur} onChange={handleChange} placeholder="Phone Number" type="text" />
+                            <InputField maxLength="6" label="Phone Number" name="number" value={values.number} onBlur={handleBlur} onChange={handleChange} placeholder="Phone Number" type="text" />
                             {errors.number ?
                                 <Alert type="warning" title={null} icon><ErrorMessage name="number"/></Alert> : 
                                 touched.number ? 

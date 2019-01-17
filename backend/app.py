@@ -5,6 +5,10 @@ from collections import OrderedDict
 
 app = create_app(APP_CONFIG)
 
+@app.after_request
+def set_control_origin(response):
+    response.headers['Access-Control-Allow-Origin'] = "*"
+    return response
 
 @app.route("/" + API_PREFIX)
 def show_resources():

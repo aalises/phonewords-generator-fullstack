@@ -6,6 +6,6 @@ interface PhoneWordRequest {
 
 interface PhoneWordResponse {
     success: boolean
-    words: string[],
+    phonewords: string[],
     error: string
 }
