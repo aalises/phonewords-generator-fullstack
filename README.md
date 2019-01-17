@@ -46,3 +46,17 @@ The Backend uses:
 - Flask, Flask RESTFul
 - Swagger for documentation
 - PyTest
+
+to build navigate to `/backend` then install the requirements
+
+```
+pip install -r requirements.txt
+```
+
+and run the API by running
+
+```
+python app.py
+```
+
+Your API is running at `localhost:5000`. You can access it via `/api/v1/phonewords/` or go to `/docs` for documentation
