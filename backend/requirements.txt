@@ -1,7 +1,6 @@
 flask
 flask_restful
 numpy
-python-coveralls
 coverage
 flasgger
 pytest
