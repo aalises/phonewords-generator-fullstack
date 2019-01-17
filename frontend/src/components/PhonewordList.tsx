@@ -15,14 +15,14 @@ interface PhonewordListProps {
 const Number = styled.span`
   border: ${props => props.number.length ? '1px solid #D3D3D3' : 'none'}
   border-radius: 3px
-  padding: 0.3rem
+  padding: 0rem 0.3rem 0.3rem 0.3rem
   color: #666666
   cursor: default
 `
 
 const WordTag = styled.div`
   font-size: 14px
-  margin: 1rem 0.1rem
+  margin: 0.1rem 0.1rem
   cursor: default
   display: inline-block
   border: 1px solid
@@ -34,12 +34,12 @@ const WordTag = styled.div`
 `
 
 export default ({number, data, isSubmitting} : PhonewordListProps) => {
-  const {success, words, error} = data
+  const {success, phonewords, error} = data
 
   //Different alerts for errors on the request or no words
   const Alerts = () => {
     if(number){
-      if(!words.length) return <Alert title={null} icon>There are no words matching your request</Alert>
+      if(!phonewords.length) return <Alert title={null} icon>There are no words matching your request</Alert>
       if(!success) return <Alert type="critical" title={null} icon>{error ? error : 'Unknown Error'}</Alert>     
     }
     return null
@@ -57,7 +57,7 @@ export default ({number, data, isSubmitting} : PhonewordListProps) => {
         {isSubmitting ? 
           <ClipLoader size={20} color={'grey'} /> : 
           <Fragment> 
-            {words.map(word => <WordTag key={word}>{word}</WordTag>)}
+            {phonewords.map(word => <WordTag key={word}>{word}</WordTag>)}
             <Alerts/>
           </Fragment>
         }

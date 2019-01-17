@@ -41,7 +41,7 @@ export default class Main extends PureComponent<any, MainState>{
     number: '',
     data: {
       success: false,
-      words: [],
+      phonewords: [],
       error: ''
     },
     isSubmitting: false
@@ -50,16 +50,8 @@ export default class Main extends PureComponent<any, MainState>{
   async handleSubmit(values){
     if(values.number === this.state.number) return; //Do not submit the same number again
     this.setState({number: values.number, isSubmitting: true});
-
-    const data = await getPhonewords('pokemon/ditto'); //Get all the phonewords for a specific phone number
-
-    const mockData : PhoneWordResponse = {
-      success: true, 
-      words: ['hey'],
-      error: '' 
-    }
-
-    this.setState({data: {...this.state.data, ...mockData}, isSubmitting: false})
+    const phonewordData = await getPhonewords(values.number); //Get all the phonewords for a specific phone number
+    this.setState({data: {...this.state.data, ...phonewordData}, isSubmitting: false})
   }
 
   render(){
