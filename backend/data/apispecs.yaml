@@ -1,0 +1,39 @@
+basePath: "/api/v1"
+schemes:
+  - https
+info:
+  description: "Simple API to convert phone numbers to phone words. The base URL for retrieving the resources is /api/v1"
+  title: "PhoneWords API"
+  version: 1.0.0
+externalDocs:
+  description: "Project repository"
+  url: "https://github.com/aalises/phonewords-generator-fullstack"  
+produces: 
+    - "application/json"    
+paths:
+  "/phonewords/<number>":
+    get:
+      summary: Computes all the phonewords associated with a number
+      tags: 
+        - resources
+      produces:
+        - application/json  
+      description: Computes all the phonewords associated with a number
+      responses: 
+          "200":
+            description: "Phonewords Response"
+            schema:
+              $ref: '#/definitions/Phonewords'
+          default:
+            description: "Unexpected Error"
+
+definitions:
+  Phonewords:
+    required:
+      - number
+    properties:
+      number:
+        type: integer
+        description: Phone number to generate the Phoneword from
+          
+swagger: '3.0'

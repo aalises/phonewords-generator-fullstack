@@ -37,3 +37,12 @@ npm run build
 - Testing with Cypress
 - Backend Integration
 - Extra features (?¿)
+
+## Backend
+
+The Backend uses:
+
+- Python 3.5
+- Flask, Flask RESTFul
+- Swagger for documentation
+- PyTest
