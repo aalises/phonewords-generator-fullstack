@@ -1,6 +1,6 @@
 basePath: "/api/v1"
 schemes:
-  - https
+  - http
 info:
   description: "Simple API to convert phone numbers to phone words. The base URL for retrieving the resources is /api/v1"
   title: "PhoneWords API"
@@ -21,7 +21,7 @@ paths:
       description: Computes all the phonewords associated with a number
       responses: 
           "200":
-            description: "Phonewords Response"
+            description: "Phone word response with a list of all possible phonewords, success flag and error message if applicable"
             schema:
               $ref: '#/definitions/Phonewords'
           default:
@@ -30,10 +30,20 @@ paths:
 definitions:
   Phonewords:
     required:
-      - number
+      - success
+      - phonewords
+      - error
     properties:
-      number:
-        type: integer
-        description: Phone number to generate the Phoneword from
+      success:
+        type: boolean
+        description: Success flag of the call
+      phonewords:
+        type: array
+        items:
+          type: string
+        description: List with all the possible phonewords
+      error:
+        type: string
+        description: Error message       
           
 swagger: '3.0'
