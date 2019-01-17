@@ -6,6 +6,8 @@ Generator of Phonewords, Full Stack. To run, simply execute:
 docker-compose up
 ```
 
+The **Front End** will be available at `localhost:4200`, and the **Backend** API (default is the documentation page), at `localhost:5000`
+
 ## Frontend
 
 The Frontend uses:
@@ -18,7 +20,15 @@ The Frontend uses:
 - Styled Components (Responsive layout)
 - Formik
 
-To start fiddling with it, just run in `/frontend`
+To start fiddling with it, just run in `/frontend` the Docker Image
+
+```
+docker build . -t phoneword_frontend
+docker run -d -p 4200:80 phoneword_frontend
+```
+
+the application will be available at port `4200` on `localhost`.
+Alternatively, you can do it without docker:
 
 ```
 npm install
@@ -29,7 +39,6 @@ and then
 ```
 npm run dev
 ``` 
-it will open the application at port `4200` on `localhost`
 
 to build run 
 ```
@@ -39,7 +48,6 @@ npm run build
 `TODO:`
 
 - Testing with Cypress
-- Backend Integration
 - Extra features (?¿)
 
 ## Backend
@@ -71,3 +79,6 @@ and run the API by running
 ```
 python app.py
 ```
+
+`TODO:`
+- Testing with PyTest
