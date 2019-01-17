@@ -8,7 +8,7 @@ app = create_app(APP_CONFIG)
 
 @app.route("/" + API_PREFIX)
 def show_resources():
-    resources = [('phoneword example', '{}/phoneword/911'.format(request.url))]  # Sample call from the root of the API
+    resources = [('phoneword example', '{}/phonewords/911'.format(request.url))]  # Sample call from the root of the API
     return jsonify({'resources': OrderedDict(resources)})
 
 @app.route("/")
