@@ -57,6 +57,11 @@ to build run
 npm run build
 ```
 
+To run the tests
+```
+npm run test
+```
+
 `TODO:`
 
 - Testing with Cypress
