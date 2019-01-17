@@ -47,7 +47,16 @@ The Backend uses:
 - Swagger for documentation
 - PyTest
 
-to build navigate to `/backend` then install the requirements
+To build and run a `Docker image` is implemented from a Dockerfile:
+
+```
+docker build . -t phoneword_backend
+docker run -d -p 5000:5000 phoneword_backend
+```
+
+Your API is running at `localhost:5000`. You can access it via `/api/v1/phonewords/` or go to `/docs` for documentation
+
+Without docker, to build navigate to `/backend` then install the requirements
 
 ```
 pip install -r requirements.txt
@@ -58,5 +67,3 @@ and run the API by running
 ```
 python app.py
 ```
-
-Your API is running at `localhost:5000`. You can access it via `/api/v1/phonewords/` or go to `/docs` for documentation
