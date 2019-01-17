@@ -2,6 +2,18 @@
 
 Generator of Phonewords, Full Stack.
 
+## Frontend
+
+The Frontend uses:
+
+- React 16.x
+- Typescript
+- Parcel Bundler
+- Kiwi.com Orbit Components
+- Cypress
+- Styled Components (Responsive layout)
+- Formik
+
 To start fiddling with it, just run
 
 ```
@@ -20,14 +32,8 @@ to build run
 npm run build
 ```
 
-### Frontend
+`TODO:`
 
-The Frontend uses:
-
-- React 16.x
-- Typescript
-- Parcel Bundler
-- Kiwi.com Orbit Components
-- Cypress
-- Styled Components
-- Formik
+- Testing with Cypress
+- Backend Integration
+- Extra features (?¿)
