@@ -1,6 +1,10 @@
 # Phonewords Generator Full Stack
 
-Generator of Phonewords, Full Stack.
+Generator of Phonewords, Full Stack. To run, simply execute:
+
+```
+docker-compose up
+```
 
 ## Frontend
 
@@ -14,7 +18,7 @@ The Frontend uses:
 - Styled Components (Responsive layout)
 - Formik
 
-To start fiddling with it, just run
+To start fiddling with it, just run in `/frontend`
 
 ```
 npm install
