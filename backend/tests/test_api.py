@@ -1,5 +1,13 @@
 import pytest
 
+def test_paths(client):
+    path_docs = client.get('/docs')
+    path_api = client.get('/api/v1/phonewords/7')
+    path_non_existant = client.get('/not_found')
+
+    assert path_docs.status_code != 404 and path_api.status_code != 404
+    assert path_non_existant.status_code == 404
+
 def test_phoneword(client):
     data = client.get('/api/v1/phonewords/667').get_json()
 
