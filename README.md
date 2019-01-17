@@ -30,3 +30,4 @@ The Frontend uses:
 - Kiwi.com Orbit Components
 - Cypress
 - Styled Components
+- Formik
