@@ -1,6 +1,6 @@
 import React from "react";
 import PhoneWordModel from "../models/phoneword-model";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik, Form, ErrorMessage } from "formik";
 import styled from "styled-components";
 
 import Button from "@kiwicom/orbit-components/lib/Button";
