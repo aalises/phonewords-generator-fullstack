@@ -1,7 +1,9 @@
 from flask import request
 from collections import OrderedDict
+from functions.phoneword_algorithm import phonewords_from_number
 
 class PhoneWordModel():
+
     def __init__(self, success, data, error):
         self.success = success
         self.data = data
@@ -14,5 +16,5 @@ class PhoneWordModel():
 
         return OrderedDict(phoneword)
 
-    def compute_phonewords(number):
-        return ['test1', 'test2']
+    def compute_phonewords(self, number):
+        return list(phonewords_from_number(number))
