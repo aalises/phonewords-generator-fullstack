@@ -1,18 +1,78 @@
-import * as React from 'react';
+import React, { PureComponent } from 'react';
 import styled from "styled-components";
 import PhonewordForm from "./components/PhonewordForm";
+import PhonewordList from "./components/PhonewordList";
 import Heading from "@kiwicom/orbit-components/lib/Heading";
+
+import getPhonewords from "./services/PhonewordService";
+import "babel-polyfill";
 
 const MainView = styled.div`
   padding: 3rem 3rem
   min-height: 100%
+  display: flex
+
+  @media (max-width: 768px) {
+    flex-direction: column
+  }
+
 `
 
-export default () => {
-  return (
-    <MainView>
-      <Heading type="display" element="h1">Phonewords Generator</Heading>
-      <PhonewordForm />
-    </MainView>
-  )
+const Column = styled.div`
+  flex-direction: column
+  width: ${props => props.half ? '50%' : 'auto'}
+
+  @media (max-width: 768px) {
+    padding-bottom: 3rem
+    width: 90%
+  }
+
+`
+
+interface MainState {
+  number: string,
+  data: PhoneWordResponse,
+  isSubmitting: boolean
+}
+
+export default class Main extends PureComponent<any, MainState>{
+
+  state = {
+    number: '',
+    data: {
+      success: false,
+      words: [],
+      error: ''
+    },
+    isSubmitting: false
+  }
+
+  async handleSubmit(values){
+    if(values.number === this.state.number) return; //Do not submit the same number again
+    this.setState({number: values.number, isSubmitting: true});
+
+    const data = await getPhonewords('pokemon/ditto'); //Get all the phonewords for a specific phone number
+
+    const mockData : PhoneWordResponse = {
+      success: true, 
+      words: ['hey'],
+      error: '' 
+    }
+
+    this.setState({data: {...this.state.data, ...mockData}, isSubmitting: false})
+  }
+
+  render(){
+    return (
+      <MainView>
+        <Column half>
+          <Heading spaceAfter="largest" type="display" element="h1">Phonewords Generator</Heading>
+          <PhonewordForm isSubmitting={this.state.isSubmitting} onSubmit={(values) => this.handleSubmit(values)} />
+        </Column>
+        <Column half>
+          <PhonewordList {...this.state} />
+        </Column>
+      </MainView>
+    )
+  }
 }
