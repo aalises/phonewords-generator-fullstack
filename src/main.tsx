@@ -4,6 +4,9 @@ import PhonewordForm from "./components/PhonewordForm";
 import PhonewordList from "./components/PhonewordList";
 import Heading from "@kiwicom/orbit-components/lib/Heading";
 
+import getPhonewords from "./services/PhonewordService";
+import "babel-polyfill";
+
 const MainView = styled.div`
   padding: 3rem 3rem
   min-height: 100%
@@ -44,12 +47,19 @@ export default class Main extends PureComponent<any, MainState>{
     isSubmitting: false
   }
 
-  handleSubmit(values){
-    console.log(values.number, this.state.number)
+  async handleSubmit(values){
     if(values.number === this.state.number) return; //Do not submit the same number again
     this.setState({number: values.number, isSubmitting: true});
-    //Simulate API call (For now...)
-    setTimeout(() => this.setState({data: {...this.state.data, success: true, words: ['hey']}, isSubmitting: false}), 1000)
+
+    const data = await getPhonewords('pokemon/ditto'); //Get all the phonewords for a specific phone number
+
+    const mockData : PhoneWordResponse = {
+      success: true, 
+      words: ['hey'],
+      error: '' 
+    }
+
+    this.setState({data: {...this.state.data, ...mockData}, isSubmitting: false})
   }
 
   render(){
