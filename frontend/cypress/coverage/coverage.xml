@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.526" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2019-01-10T10:57:46" tests="0" failures="0" time="0">
+<testsuites name="Mocha Tests" time="0.544" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2019-01-18T09:50:45" tests="0" failures="0" time="0">
   </testsuite>
-  <testsuite name="Initial test suite" timestamp="2019-01-10T10:57:47" tests="1" failures="0" time="0.526">
-    <testcase name="Initial test suite Should render the access pages correctly without crashing" time="0.526" classname="Should render the access pages correctly without crashing">
+  <testsuite name="Phoneword List Test Suite" timestamp="2019-01-18T09:50:45" tests="1" failures="0" time="0.544">
+    <testcase name="Phoneword List Test Suite Should render the app without crashing" time="0.544" classname="Should render the app without crashing">
     </testcase>
   </testsuite>
 </testsuites>

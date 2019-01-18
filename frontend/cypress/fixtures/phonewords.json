@@ -1,0 +1,25 @@
+{
+    "not_valid_letter": {
+        "number": "693a",
+        "resultLength": 0,
+        "known_word": ""
+    },
+    "not_valid_empty": {
+        "number": "",
+        "resultLength": 0,
+        "known_word": ""
+    },
+    "not_valid_1": {
+        "number": "193",
+        "resultLength": 0,
+        "known_word": ""
+    },
+    "valid1": {
+        "number": "684732",
+        "resultLength": 100,
+        "known_word": "ae"
+    },
+    "valid2": {
+
+    }
+}
