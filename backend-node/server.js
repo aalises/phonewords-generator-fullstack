@@ -8,3 +8,5 @@ app.use(`${prefix}/${version}`, indexRouter);
 
 app.listen(port);
 console.log('The server is listening on port:' + port);
+
+module.exports = app

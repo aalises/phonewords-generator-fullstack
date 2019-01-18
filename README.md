@@ -76,6 +76,11 @@ to build run
 npm run build
 ```
 
+To run the tests
+```
+npm run test
+```
+
 `TODO:`
 
 - Testing with Cypress
@@ -111,8 +116,11 @@ and run the API by running
 python app.py
 ```
 
-`TODO:`
-- Testing with PyTest
+To test, run
+
+```
+python -m pytest
+```
 
 ## Node Backend
 
@@ -120,6 +128,7 @@ The Node Backend uses
 
 - Node 8
 - ExpressJS
+- Mocha + Chai
 
 To build and run a `Docker image` is implemented from a Dockerfile:
 
@@ -143,6 +152,8 @@ finally, start the API by running
 npm run dev
 ```
 
-`TODO:`
-- Implement tests
-- Maybe switch to Typescript
+To test just run
+
+```
+npm run test
+```

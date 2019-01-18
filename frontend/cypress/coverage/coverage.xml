@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.526" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2019-01-10T10:57:46" tests="0" failures="0" time="0">
+<testsuites name="Mocha Tests" time="6.33" tests="4" failures="0">
+  <testsuite name="Root Suite" timestamp="2019-01-18T12:12:44" tests="0" failures="0" time="0">
   </testsuite>
-  <testsuite name="Initial test suite" timestamp="2019-01-10T10:57:47" tests="1" failures="0" time="0.526">
-    <testcase name="Initial test suite Should render the access pages correctly without crashing" time="0.526" classname="Should render the access pages correctly without crashing">
+  <testsuite name="Phoneword List Test Suite" timestamp="2019-01-18T12:12:44" tests="4" failures="0" time="6.33">
+    <testcase name="Phoneword List Test Suite Should show default message" time="0.724" classname="Should show default message">
+    </testcase>
+    <testcase name="Phoneword List Test Suite Should show message and number when valid number" time="0.992" classname="Should show message and number when valid number">
+    </testcase>
+    <testcase name="Phoneword List Test Suite Should show correct number of phonewords for given numbers" time="2.909" classname="Should show correct number of phonewords for given numbers">
+    </testcase>
+    <testcase name="Phoneword List Test Suite Should show the tag corresponding to a known words for given numbers" time="1.705" classname="Should show the tag corresponding to a known words for given numbers">
     </testcase>
   </testsuite>
 </testsuites>

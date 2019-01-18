@@ -1,0 +1,8 @@
+{
+    "form_empty": "Phone number cannot be empty",
+    "form_info": "The phone number has to contain only digits from 2 to 9, e.g 69394837 (0 and 1 do not contain phone word information)",
+    "form_invalid": "Invalid number: Only integers from 2 to 9 are allowed",
+    "form_success": "This is a valid phone number",
+    "list_default": "Submit a Phone Number to display the list of its possible phone words",
+    "list_is_word": "List of Phone Words for the number"
+}

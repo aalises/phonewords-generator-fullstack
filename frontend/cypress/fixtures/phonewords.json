@@ -1,0 +1,27 @@
+{
+    "not_valid_letter": {
+        "number": "693a",
+        "resultLength": 0,
+        "known_word": ""
+    },
+    "not_valid_empty": {
+        "number": "",
+        "resultLength": 0,
+        "known_word": ""
+    },
+    "not_valid_1": {
+        "number": "193",
+        "resultLength": 0,
+        "known_word": ""
+    },
+    "valid1": {
+        "number": "684732",
+        "resultLength": 972,
+        "known_word": "MUHSFA"
+    },
+    "valid2": {
+        "number": "8 93",
+        "resultLength": 36,
+        "known_word": "TYF"
+    }
+}
