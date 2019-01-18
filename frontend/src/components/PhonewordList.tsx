@@ -49,7 +49,7 @@ export default ({number, data, isSubmitting} : PhonewordListProps) => {
     <div>
         <Heading dataTest='heading-phoneword-list' element="h2" type="title2" spaceAfter="medium">
           {number ? 
-            <Fragment>List of Phone Words for the number: <Number data-test='heading-phoneword-list' number={number}>{number}</Number></Fragment> : 
+            <Fragment>List of Phone Words for the number: <Number data-test='phoneword-number' number={number}>{number}</Number></Fragment> : 
             <Fragment>Submit a Phone Number to display the list of its possible phone words</Fragment>
           }
         </Heading>
@@ -57,7 +57,7 @@ export default ({number, data, isSubmitting} : PhonewordListProps) => {
         {isSubmitting ? 
           <ClipLoader size={20} color={'grey'} /> : 
           <Fragment> 
-            {phonewords.map(word => <WordTag data-test='word-tag' key={word}>{word}</WordTag>)}
+            {phonewords.map(word => <WordTag data-test={`word-tag-${word}`} key={word}>{word}</WordTag>)}
             <Alerts/>
           </Fragment>
         }

@@ -16,10 +16,12 @@
     },
     "valid1": {
         "number": "684732",
-        "resultLength": 100,
-        "known_word": "ae"
+        "resultLength": 972,
+        "known_word": "MUHSFA"
     },
     "valid2": {
-
+        "number": "893",
+        "resultLength": 36,
+        "known_word": "TYF"
     }
 }
