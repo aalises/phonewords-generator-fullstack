@@ -81,11 +81,6 @@ To run the tests
 npm run test
 ```
 
-`TODO:`
-
-- Testing with Cypress
-- Extra features (?¿)
-
 ## Python Backend
 
 The Python Backend uses:
