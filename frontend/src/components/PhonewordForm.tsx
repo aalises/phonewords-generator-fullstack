@@ -25,6 +25,10 @@ const SubmitButton = styled(Button)`
     margin-top: 0.5rem
 `
 
+const AlertWrapper = styled.div`
+    margin: 1rem 0rem
+`
+
 //Adds a new number to the input not exceeding the max length, or subtract one
 const computeNewValueKeyboard = (erase : boolean, val: string, currValue : string) : string => {
     if(erase){
@@ -44,14 +48,16 @@ export default ({onSubmit, isSubmitting}) => {
                     <FormBox>
                         <Form> 
                             <InputField dataTest="phoneword-input" maxLength={MAX_LENGTH} label="Phone Number" name="number" value={values.number} onBlur={handleBlur} onChange={handleChange} placeholder="Phone Number" type="text" />
-                            {errors.number ?
-                                <Alert dataTest="phoneword-message" type="warning" title={null} icon><ErrorMessage name="number"/></Alert> : 
-                                touched.number ? 
-                                    <Alert type="success" dataTest="phoneword-message" title={null} icon>{PhoneWordModel.messages.success}</Alert> :
-                                    <Alert dataTest="phoneword-message" title={null} icon>{PhoneWordModel.messages.info}</Alert>
-                            }
+                            <AlertWrapper>
+                                {errors.number ?
+                                    <Alert dataTest="phoneword-message" type="warning" title={null} icon><ErrorMessage name="number"/></Alert> : 
+                                    touched.number ? 
+                                        <Alert type="success" dataTest="phoneword-message" title={null} icon>{PhoneWordModel.messages.success}</Alert> :
+                                        <Alert dataTest="phoneword-message" title={null} icon>{PhoneWordModel.messages.info}</Alert>
+                                }
+                            </AlertWrapper>
                             <PhoneKeyboard setValues={(val,erase) => setValues({number: computeNewValueKeyboard(erase, val, values.number)})} resetForm={() => resetForm()} />
-                            <SubmitButton dataTest="submit-phoneword-button" disabled={isSubmitting} type="secondary" onClick={handleSubmit} > Compute Phone Words </SubmitButton>
+                            <SubmitButton dataTest="submit-phoneword-button" disabled={isSubmitting} type="info" onClick={handleSubmit} > Compute Phone Words </SubmitButton>
                         </Form>
                     </FormBox>
                 );

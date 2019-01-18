@@ -29,6 +29,13 @@ const KeyboardPhoneWrapper = styled.div`
   margin: 1rem 0rem
 `
 
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 80%
+`
+
 export default ({setValues, resetForm} : PhoneKeyboardProps) => {
     return (
       <KeyboardPhoneWrapper>
@@ -38,9 +45,11 @@ export default ({setValues, resetForm} : PhoneKeyboardProps) => {
               <Heading type="title3" element="h3">Show/Hide Phone Keyboard </Heading>
             </CardSectionHeader>
             <CardSectionContent>
+              <Grid>
               {numbers.map(el => 
-                <Button type="info" onClick={() => handleClick(el, setValues, resetForm)} key={el}>{el}</Button>
+                <Button type="secondary" onClick={() => handleClick(el, setValues, resetForm)} key={el}>{el}</Button>
               )}
+              </Grid>
             </CardSectionContent>
           </CardSection>
         </PhoneCard>
