@@ -13,25 +13,31 @@ The frontend has validation, checking that the phone number are only integers (2
 
 The backend is a documented, tested **API developed with Python and Flask** that exposes an endpoint that given a number returns all the possible phonewords for that number, it checks for valid numbers and possible errors.
 
-A **Node API** built with Express is also available, but it has no documentation.
+An equivalent **Node API** built with Express is also available, but it has no documentation.
 
 It is all bundled using Docker with containers for the backend and frontend that are working together in a system using docker compose.
 
 To run, simply execute:
 
 ```
-docker-compose build
 docker-compose up
 ```
 
-if you want to switch backends, just change the backend build directory on the `docker-compose.yml` file
+if you want to switch backends between node and python (default is Python), just change the backend build directory on the `docker-compose.yml` file
 
 ```python
 backend:
     build: ./backend-python # or ./backend-node
 ```
 
-The **Front End** will be available at `localhost:4200`, and the **Backend** API (default is the documentation page for the Python API), at `localhost:5000`
+and run 
+
+```
+docker-compose build
+docker-compose up
+```
+
+The **Front End** will be available at `localhost:4200`, and the **Backend** API (default route is the documentation page for the Python API), at `localhost:5000`
 
 ## Frontend
 
