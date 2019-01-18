@@ -1,16 +1,21 @@
 # Phonewords Generator Full Stack
 
-Generator of Phonewords, Full Stack. 
+Generator of Phonewords, Full Stack with containerized services for backend (Python API or Node API) and Frontend (Javascript application with React)
 
+![screenshot](./frontend/public/assets/screenshots/PhoneWords.png)
+
+![screenshot2](./frontend/public/assets/screenshots/PhoneWords2.png)
 ## Description
 
 This application is a converter from phone numbers to [phonewords](https://en.wikipedia.org/wiki/Phoneword). You can input a phone and it will give you a list of all the possible phonewords for that specific phone number.
 
 The frontend has validation, checking that the phone number are only integers (2-9) digits and/or spaces, is not empty and maximum length 6, and shows all the corresponding phone words in a list that also checks if there are no words matching or something went wrong with the request.
 
-The backend is a documented, tested API designed with Python and Flask that exposes an endpoint that given a number returns all the possible phonewords for that number, it checks for valid numbers and possible errors.
+The backend is a documented, tested **API developed with Python and Flask** that exposes an endpoint that given a number returns all the possible phonewords for that number, it checks for valid numbers and possible errors.
 
-It is all bundled using Docker.
+An equivalent **Node API** built with Express is also available, but it has no documentation.
+
+It is all bundled using Docker with containers for the backend and frontend that are working together in a system using docker compose.
 
 To run, simply execute:
 
@@ -18,7 +23,21 @@ To run, simply execute:
 docker-compose up
 ```
 
-The **Front End** will be available at `localhost:4200`, and the **Backend** API (default is the documentation page), at `localhost:5000`
+if you want to switch backends between node and python (default is Python), just change the backend build directory on the `docker-compose.yml` file
+
+```python
+backend:
+    build: ./backend-python # or ./backend-node
+```
+
+and run 
+
+```
+docker-compose build
+docker-compose up
+```
+
+The **Front End** will be available at `localhost:4200`, and the **Backend** API (default route is the documentation page for the Python API), at `localhost:5000`
 
 ## Frontend
 
@@ -62,9 +81,9 @@ npm run build
 - Testing with Cypress
 - Extra features (?¿)
 
-## Backend
+## Python Backend
 
-The Backend uses:
+The Python Backend uses:
 
 - Python 3.5
 - Flask, Flask RESTFul
@@ -80,7 +99,7 @@ docker run -d -p 5000:5000 phoneword_backend
 
 Your API is running at `localhost:5000`. You can access it via `/api/v1/phonewords/` or go to `/docs` for documentation
 
-Without docker, to build navigate to `/backend` then install the requirements
+Without docker, to build navigate to `/backend-python` then install the requirements
 
 ```
 pip install -r requirements.txt
@@ -94,3 +113,36 @@ python app.py
 
 `TODO:`
 - Testing with PyTest
+
+## Node Backend
+
+The Node Backend uses
+
+- Node 8
+- ExpressJS
+
+To build and run a `Docker image` is implemented from a Dockerfile:
+
+```
+docker build . -t phoneword_backend
+docker run -d -p 5000:5000 phoneword_backend
+```
+
+Your API is running at `localhost:5000`. You can access it via `/api/v1/phonewords/` 
+
+Without docker, to build navigate to `/backend-node` and run
+
+```
+npm install
+
+```
+
+finally, start the API by running
+
+```
+npm run dev
+```
+
+`TODO:`
+- Implement tests
+- Maybe switch to Typescript
