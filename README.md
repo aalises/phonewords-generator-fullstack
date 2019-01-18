@@ -116,13 +116,11 @@ and run the API by running
 python app.py
 ```
 
-<<<<<<< HEAD
 To test, run
 
 ```
 python -m pytest
 ```
-=======
 `TODO:`
 - Testing with PyTest
 
@@ -158,4 +156,3 @@ npm run dev
 `TODO:`
 - Implement tests
 - Maybe switch to Typescript
->>>>>>> origin/develop
