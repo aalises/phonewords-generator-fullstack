@@ -2,7 +2,7 @@ version: "3"
 
 services:
   backend:
-    build: ./backend
+    build: ./backend-python
     links:
       - frontend
     ports:
