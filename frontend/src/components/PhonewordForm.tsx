@@ -35,7 +35,7 @@ export default ({onSubmit, isSubmitting}) => {
                             {errors.number ?
                                 <Alert dataTest="phoneword-message" type="warning" title={null} icon><ErrorMessage name="number"/></Alert> : 
                                 touched.number ? 
-                                    <Alert dataTest="phoneword-message" title={null} icon>{PhoneWordModel.messages.success}</Alert> :
+                                    <Alert type="success" dataTest="phoneword-message" title={null} icon>{PhoneWordModel.messages.success}</Alert> :
                                     <Alert dataTest="phoneword-message" title={null} icon>{PhoneWordModel.messages.info}</Alert>
                             }
                             <SubmitButton dataTest="submit-phoneword-button" disabled={isSubmitting} type="secondary" onClick={handleSubmit} > Compute Phone Words </SubmitButton>
