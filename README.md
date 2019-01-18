@@ -83,6 +83,10 @@ npm run test
 
 ## Python Backend
 
+![documentation](./frontend/public/assets/screenshots/PhoneWordsAPI.png)
+*Documentation screenshot*
+
+
 The Python Backend uses:
 
 - Python 3.5
