@@ -22,6 +22,7 @@ const SubmitButton = styled(Button)`
     margin-top: 0.5rem
 `
 
+
 export default ({onSubmit, isSubmitting}) => { 
     return (
         <Formik validateOnChange={false} onSubmit={ props => onSubmit(props)}  initialValues={PhoneWordModel.initialValues} validationSchema={PhoneWordModel.ValidationSchema} >
@@ -30,14 +31,14 @@ export default ({onSubmit, isSubmitting}) => {
                 return (
                     <FormBox>
                         <Form> 
-                            <InputField maxLength="6" label="Phone Number" name="number" value={values.number} onBlur={handleBlur} onChange={handleChange} placeholder="Phone Number" type="text" />
+                            <InputField dataTest="phoneword-input" maxLength="6" label="Phone Number" name="number" value={values.number} onBlur={handleBlur} onChange={handleChange} placeholder="Phone Number" type="text" />
                             {errors.number ?
-                                <Alert type="warning" title={null} icon><ErrorMessage name="number"/></Alert> : 
+                                <Alert dataTest="phoneword-message" type="warning" title={null} icon><ErrorMessage name="number"/></Alert> : 
                                 touched.number ? 
-                                    <Alert type="success" title={null} icon>{PhoneWordModel.messages.success}</Alert> :
-                                    <Alert title={null} icon>{PhoneWordModel.messages.info}</Alert>
+                                    <Alert type="success" dataTest="phoneword-message" title={null} icon>{PhoneWordModel.messages.success}</Alert> :
+                                    <Alert dataTest="phoneword-message" title={null} icon>{PhoneWordModel.messages.info}</Alert>
                             }
-                            <SubmitButton disabled={isSubmitting} type="secondary" onClick={handleSubmit} > Compute Phone Words </SubmitButton>
+                            <SubmitButton dataTest="submit-phoneword-button" disabled={isSubmitting} type="secondary" onClick={handleSubmit} > Compute Phone Words </SubmitButton>
                         </Form>
                     </FormBox>
                 );

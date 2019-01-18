@@ -1,6 +1,7 @@
 describe('Initial test suite', () => {
-    it('Should render the access pages correctly without crashing', () => {
+
+    it('Should render the app without crashing', function(){
         cy.visit('/');
-        cy.contains('Starting Point');
+        cy.contains('Phonewords Generator');
     });
 });
