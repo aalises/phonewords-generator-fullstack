@@ -40,14 +40,14 @@ export default ({setValues, resetForm} : PhoneKeyboardProps) => {
     return (
       <KeyboardPhoneWrapper>
         <Card>
-          <CardSection expandable>
+          <CardSection expandable dataTest="keyboard-phone-card">
             <CardSectionHeader>
               <Heading type="title3" element="h3">Show/Hide Phone Keyboard </Heading>
             </CardSectionHeader>
             <CardSectionContent>
               <Grid>
               {numbers.map(el => 
-                <Button type="secondary" onClick={() => handleClick(el, setValues, resetForm)} key={el}>{el}</Button>
+                <Button type="secondary" dataTest={`keyboard-phone-element-${el}`} onClick={() => handleClick(el, setValues, resetForm)} key={el}>{el}</Button>
               )}
               </Grid>
             </CardSectionContent>
