@@ -7,7 +7,7 @@ const should = chai.should();
 
 chai.use(chaiHttp);
 
-const error_message = 'Phone number not valid. Has to contain only digits and no 0/1'
+const error_message = 'Phone number not valid. Has to contain only digits and no 0/1, maximum length 9'
 
 describe('API Tests', () => {
       describe('Test base route', () => {
@@ -26,7 +26,7 @@ describe('API Tests', () => {
             chai.request(server)
                   .get('/api/v1/phonewords/154')
                   .end((err, res) => {
-                        res.should.have.status(200);
+                        res.should.have.status(400);
                         res.body.should.have.all.keys('success','phonewords','error')
 
                         res.body.should.have.property('success').to.equal(false)
@@ -38,7 +38,7 @@ describe('API Tests', () => {
             chai.request(server)
                   .get('/api/v1/phonewords/novalid')
                   .end((err, res) => {
-                        res.should.have.status(200);
+                        res.should.have.status(400);
 
                         res.body.should.have.all.keys('success','phonewords','error');
                         res.body.should.have.property('success').to.equal(false);

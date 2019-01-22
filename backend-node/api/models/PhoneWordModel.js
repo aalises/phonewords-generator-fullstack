@@ -1,10 +1,12 @@
 
 const errorMessages = {
-    notValid: 'Phone number not valid. Has to contain only digits and no 0/1'
+    notValid: 'Phone number not valid. Has to contain only digits and no 0/1, maximum length 9'
 }
 
+const MAX_LENGTH = 9;
+
 const validate = (number) => {
-    if(!number) return false;
+    if(!number || number.length >= MAX_LENGTH) return false;
     const reg = new RegExp('^[2-9]+$');
     return reg.test(number)
 }
