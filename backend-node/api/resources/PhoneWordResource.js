@@ -9,11 +9,12 @@ router.all('/:number',(req,res) => {
     if(validate(req.params.number)){
         phonewords = compute_phonewords(req.params.number);
         responseData = json(true, phonewords, '');
+        res.statusCode = 200;
     }else{
         responseData = json(false, [], errorMessages.notValid);
+        res.statusCode = 400;
     }
 
-    res.statusCode = 200;
     res.set('Access-Control-Allow-Origin', '*')
     res.json(responseData)
 });
