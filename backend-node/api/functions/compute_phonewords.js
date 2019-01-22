@@ -11,21 +11,20 @@ const letters_numbers = {
 }
 
 const compute_phonewords = number => {
-  let result = []
-  for(let i = 0; i <= number.length; i++){
-    const currentNumber = number[i]
-    const added_phonewords = []
+  let result = [];
 
-    if (letters_numbers[currentNumber]) {
-      const letters = letters_numbers[currentNumber]
+  for(const currentNumber of number){
+    const added_phonewords = [];
+    const letters = letters_numbers[currentNumber];
 
-      for(let j = 0; j < letters.length; j++) {
+    if (letters) {
+      for(const letter of letters) {
         if (result.length){
-          for (let k = result.length - 1; k >= 0; k--) {
-            added_phonewords.push(result[k] + letters[j])
+          for (let i = result.length - 1; i >= 0; i--) {
+            added_phonewords.push(result[i] + letter)
           }
         } else {
-          added_phonewords.push( letters[j] )
+          added_phonewords.push(letter)
         }
       }
     } else {

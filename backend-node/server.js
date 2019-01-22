@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();     
-const port = process.env.PORT || 5000;   
 const indexRouter = require('./api/index');
-const { version, prefix } = require('./config');
+const { version, prefix, port } = require('./config');
+const port = process.env.PORT || port;   
+
 
 app.use(`${prefix}/${version}`, indexRouter); 
 

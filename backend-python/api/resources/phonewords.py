@@ -10,7 +10,6 @@ class PhoneWords(Resource):
             model_instance = PhoneWordModel(False, [], 'Phone number not valid. Has to contain only digits and no 0/1')
             return model_instance.json(), 500
 
-        phonewords = None
         phonewords = model_instance.compute_phonewords(number)
 
         if phonewords:
