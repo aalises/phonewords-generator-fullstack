@@ -39,6 +39,14 @@ const computeNewValueKeyboard = (erase : boolean, val: string, currValue : strin
     }
 }
 
+const handleClick = (el : string, setValues : function, resetForm: function, values: any) : void => {
+    if(el === 'Clear'){
+      resetForm()
+    }else{
+      setValues({number: computeNewValueKeyboard(el === "Back" ? true : false, el, values.number)}
+    }
+}
+
 export default ({onSubmit, isSubmitting}) => { 
     return (
         <Formik validateOnChange={false} onSubmit={ props => onSubmit(props)}  initialValues={PhoneWordModel.initialValues} validationSchema={PhoneWordModel.ValidationSchema} >
@@ -56,7 +64,7 @@ export default ({onSubmit, isSubmitting}) => {
                                         <Alert dataTest="phoneword-message" title={null} icon>{PhoneWordModel.messages.info}</Alert>
                                 }
                             </AlertWrapper>
-                            <PhoneKeyboard setValues={(val,erase) => setValues({number: computeNewValueKeyboard(erase, val, values.number)})} resetForm={() => resetForm()} />
+                            <PhoneKeyboard handleClick={el => handleClick(el, setValues, resetForm, values)} />
                             <SubmitButton dataTest="submit-phoneword-button" disabled={isSubmitting} type="info" onClick={handleSubmit} > Compute Phone Words </SubmitButton>
                         </Form>
                     </FormBox>

@@ -12,17 +12,8 @@ import CardSectionContent from "@kiwicom/orbit-components/lib/Card/CardSection/C
 const numbers = ['1','2','3', '4','5','6', '7','8','9', 'Back','0','Clear'];
 
 
-const handleClick = (el : string, setValues : function, resetForm: function) : void => {
-  if(el === 'Clear'){
-    resetForm()
-  }else{
-    setValues(el, el === "Back" ? true : false);
-  }
-}
-
 interface PhoneKeyboardProps {
-  setValues: (string, boolean) => void,
-  resetForm: void => void
+  handleClick: void => void
 }
 
 const KeyboardPhoneWrapper = styled.div`
@@ -36,7 +27,7 @@ const Grid = styled.div`
   width: 80%
 `
 
-export default ({setValues, resetForm} : PhoneKeyboardProps) => {
+export default ({handleClick} : PhoneKeyboardProps) => {
     return (
       <KeyboardPhoneWrapper>
         <Card>
@@ -47,7 +38,7 @@ export default ({setValues, resetForm} : PhoneKeyboardProps) => {
             <CardSectionContent>
               <Grid>
               {numbers.map(el => 
-                <Button type="secondary" dataTest={`keyboard-phone-element-${el}`} onClick={() => handleClick(el, setValues, resetForm)} key={el}>{el}</Button>
+                <Button type="secondary" dataTest={`keyboard-phone-element-${el}`} onClick={() => handleClick(el)} key={el}>{el}</Button>
               )}
               </Grid>
             </CardSectionContent>
