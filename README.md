@@ -50,6 +50,7 @@ The Frontend uses:
 - Cypress
 - Styled Components (Responsive layout)
 - Formik
+- Enzyme + Jest (Unit Testing)
 
 To start fiddling with it, just run in `/frontend` the Docker Image
 
