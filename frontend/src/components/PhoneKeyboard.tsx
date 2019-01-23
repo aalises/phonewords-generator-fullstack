@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from "styled-components";
 
 //Orbit imports
@@ -13,7 +13,7 @@ const numbers = ['1','2','3', '4','5','6', '7','8','9', 'Back','0','Clear'];
 
 
 interface PhoneKeyboardProps {
-  handleClick: void => void
+  handleClick: Function
 }
 
 const KeyboardPhoneWrapper = styled.div`
@@ -43,8 +43,7 @@ export default ({handleClick} : PhoneKeyboardProps) => {
               </Grid>
             </CardSectionContent>
           </CardSection>
-        </PhoneCard>
+        </Card>
       </KeyboardPhoneWrapper>
     )
-  }
 }
