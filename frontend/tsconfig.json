@@ -14,6 +14,7 @@
     "strictNullChecks": true,
     "preserveConstEnums": true,
     "sourceMap": true,
+    "esModuleInterop": true,
     "lib": [
       "esnext"
     ],
@@ -25,7 +26,8 @@
     },
     "types": [
       "node",
-      "webpack-env"
+      "webpack-env",
+      "jest"
     ]
   }
 }

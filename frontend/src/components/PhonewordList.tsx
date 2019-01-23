@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import * as React from 'react'
 import styled from "styled-components"
 
 import Heading from "@kiwicom/orbit-components/lib/Heading";
@@ -49,17 +49,17 @@ export default ({number, data, isSubmitting} : PhonewordListProps) => {
     <div>
         <Heading dataTest='heading-phoneword-list' element="h2" type="title2" spaceAfter="medium">
           {number ? 
-            <Fragment>List of Phone Words for the number: <Number data-test='phoneword-number' number={number}>{number}</Number></Fragment> : 
-            <Fragment>Submit a Phone Number to display the list of its possible phone words</Fragment>
+            <React.Fragment>List of Phone Words for the number: <Number data-test='phoneword-number' number={number}>{number}</Number></React.Fragment> : 
+            <React.Fragment>Submit a Phone Number to display the list of its possible phone words</React.Fragment>
           }
         </Heading>
         <Separator />
         {isSubmitting ? 
           <ClipLoader size={20} color={'grey'} /> : 
-          <Fragment> 
+          <React.Fragment> 
             {phonewords.map(word => <WordTag data-test={`word-tag-${word}`} key={word}>{word}</WordTag>)}
             <Alerts/>
-          </Fragment>
+          </React.Fragment>
         }
     </div>
   )

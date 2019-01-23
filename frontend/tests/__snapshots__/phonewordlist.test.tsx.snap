@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Phoneword List Test Suite Displays a list of words from a specific number as expected 1`] = `
+<div>
+  <Heading
+    dataTest="heading-phoneword-list"
+    element="h2"
+    spaceAfter="medium"
+    type="title2"
+  >
+    List of Phone Words for the number: 
+    <styled.span
+      data-test="phoneword-number"
+      number="66743"
+    >
+      66743
+    </styled.span>
+  </Heading>
+  <Separator />
+  <styled.div
+    data-test="word-tag-test"
+    key="test"
+  >
+    test
+  </styled.div>
+  <styled.div
+    data-test="word-tag-phonewords"
+    key="phonewords"
+  >
+    phonewords
+  </styled.div>
+  <Alerts />
+</div>
+`;
+
+exports[`Phoneword List Test Suite Displays a spinner when submitting 1`] = `
+<div>
+  <Heading
+    dataTest="heading-phoneword-list"
+    element="h2"
+    spaceAfter="medium"
+    type="title2"
+  >
+    Submit a Phone Number to display the list of its possible phone words
+  </Heading>
+  <Separator />
+  <onlyUpdateForKeys(Loader)
+    color="grey"
+    css=""
+    loading={true}
+    size={20}
+    sizeUnit="px"
+  />
+</div>
+`;
+
+exports[`Phoneword List Test Suite Renders the Alert message when no words correctly 1`] = `
+<div>
+  <Heading
+    dataTest="heading-phoneword-list"
+    element="h2"
+    spaceAfter="medium"
+    type="title2"
+  >
+    Submit a Phone Number to display the list of its possible phone words
+  </Heading>
+  <Separator />
+  <Alerts />
+</div>
+`;
+
+exports[`Phoneword List Test Suite Renders the Initial state correctly 1`] = `
+<div>
+  <Heading
+    dataTest="heading-phoneword-list"
+    element="h2"
+    spaceAfter="medium"
+    type="title2"
+  >
+    Submit a Phone Number to display the list of its possible phone words
+  </Heading>
+  <Separator />
+  <Alerts />
+</div>
+`;
